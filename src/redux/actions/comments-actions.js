@@ -9,7 +9,7 @@ export const REMOVED_COMMENT_FAILED = 'REMOVED_COMMENT_FAILED'
 
 export const fetchComments = () => {
   return dispatch => {
-    axios.get('http://localhost:8000/comments')
+    axios.get('https://areyouheretho.herokuapp.com/comments')
     .then(res => dispatch({
       type: FETCH_COMMENTS_SUCCESS,
       payload: res.data
@@ -24,7 +24,7 @@ export const fetchComments = () => {
   export const addComment = ( comment ) => {
     //console.log(comment);
     return dispatch => {
-      axios.post(`http://localhost:8000/comments`, comment)
+      axios.post(`https://areyouheretho.herokuapp.com/comments`, comment)
       .then(res => dispatch({
         type: ADD_COMMENT_SUCCESS,
         payload: res.data
@@ -39,7 +39,7 @@ export const fetchComments = () => {
   export const removeComment = id => {
     //console.log("ACTION REMOVE COMMENT:", id)
   return dispatch => {
-    axios.delete(`http://localhost:8000/comments/${id}`)
+    axios.delete(`https://areyouheretho.herokuapp.com/comments/${id}`)
     .then(res => dispatch({
       type: REMOVED_COMMENT,
       payload: id

@@ -7,7 +7,7 @@ export const TOGGLE_FAIL = 'TOGGLE_FAIL';
 
 export const fetchBars = () => {
   return dispatch => {
-    axios.get('http://localhost:8000/bars')
+    axios.get('https://areyouheretho.herokuapp.com/bars')
     .then(res => dispatch({
       type: FETCH_BARS_SUCCESS,
       payload: res.data
@@ -23,7 +23,7 @@ export const toggleStatus = bar => {
   console.log("ACTION TOGGLE STATUS:", bar)
   return dispatch => {
     console.log('heard');
-    axios.put(`http://localhost:8000/bars/${bar.id}`, bar)
+    axios.put(`https://areyouheretho.herokuapp.com/bars/${bar.id}`, bar)
     .then(res => dispatch({
       type: TOGGLE_SUCCESS,
       payload: res.data

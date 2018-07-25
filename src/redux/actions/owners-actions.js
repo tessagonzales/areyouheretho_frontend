@@ -5,7 +5,7 @@ export const FETCH_OWNERS_FAILED = 'FETCH_OWNERS_FAILED'
 
 export const fetchOwners = () => {
   return dispatch => {
-    axios.get('http://localhost:8000/owners')
+    axios.get('https://areyouheretho.herokuapp.com/owners')
     .then(res => dispatch({
       type: FETCH_OWNERS_SUCCESS,
       payload: res.data

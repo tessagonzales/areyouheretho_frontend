@@ -9,7 +9,7 @@ export const REMOVED_PATRON_FAILED = 'REMOVED_PATRON_FAILED';
 
 export const fetchPatrons = () => {
   return dispatch => {
-    axios.get('http://localhost:8000/patrons')
+    axios.get('https://areyouheretho.herokuapp.com/patrons')
     .then(res => dispatch({
       type: FETCH_PATRONS_SUCCESS,
       payload: res.data
@@ -24,7 +24,7 @@ export const fetchPatrons = () => {
 export const addPatron = ( person ) => {
   console.log(person)
   return dispatch => {
-    axios.post(`http://localhost:8000/patrons`, person)
+    axios.post(`https://tessa-app.herokuapp.com/patrons`, person)
     .then(res => dispatch({
       type: ADD_PERSON_SUCCESS,
       payload: res.data
@@ -38,7 +38,7 @@ export const addPatron = ( person ) => {
 
 export const removePatron = id => {
   return dispatch => {
-    axios.delete(`http://localhost:8000/patrons/${id}`)
+    axios.delete(`https://tessa-app.herokuapp.com/${id}`)
     .then(res => dispatch({
       type: REMOVED_PATRON,
       payload: id

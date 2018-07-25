@@ -14,8 +14,9 @@ class Bar extends Component {
       }
     }
 
-    //console.log("ADMIN PROPS ====>", this.props);
+    // console.log("ADMIN PROPS ====>", this.props);
     let bar = this.props.bar
+    console.log('BAR OPEN ----> \n', bar)
 
   return(
     <div>
